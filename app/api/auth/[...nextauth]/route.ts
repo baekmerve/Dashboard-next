@@ -26,7 +26,6 @@ const handler = NextAuth({
       async authorize(credentials, req) {
         const parsedCredentials = LoginSchema.safeParse(credentials);
 
-
         if (!parsedCredentials.success) return null;
 
         const { email, password } = parsedCredentials.data;
@@ -53,6 +52,14 @@ const handler = NextAuth({
       },
     }),
   ],
+  callbacks: {
+    async redirect({ url, baseUrl }) {
+      console.log("Redirecting to:", url); // Debugging
+      console.log("Base URL:", baseUrl); // Should log NEXTAUTH_URL
+
+      return url.startsWith(baseUrl) ? url : baseUrl; // Ensures safe redirect
+    },
+  },
 });
 
 export { handler as GET, handler as POST };

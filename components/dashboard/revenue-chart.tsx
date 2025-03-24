@@ -20,7 +20,7 @@ interface Props {
 
 export default function RevenueChart({ revenueList }: Props) {
   return (
-    <Card className="w-full md:col-span-4 rounded-xl shadow-xl my-2 overflow-hidden px-5">
+    <Card className="w-full md:col-span-4 rounded-xl shadow-xl my-2 overflow-hidden h-[380px] px-5">
       <CardTitle className="flex items-center gap-2 text-xl md:text-2xl">
         <BadgeDollarSign /> Monthly Revenue
       </CardTitle>

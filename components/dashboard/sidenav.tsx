@@ -33,7 +33,7 @@ export default async function SideNav() {
         </nav>
 
         {/* Auth Button */}
-        <div className="md:w-full w-auto md:mb-40">
+        <div className="md:w-full w-auto md:mb-10">
           {session ? <LogoutButton /> : <LoginButton />}
         </div>
       </div>

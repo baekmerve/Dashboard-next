@@ -16,7 +16,7 @@ export default async function LatestInvoices() {
 
 
   return (
-    <Card className="flex w-full flex-col md:col-span-4 rounded-xl shadow-xl px-5 my-2 ">
+    <Card className="flex w-full flex-col md:col-span-4 rounded-xl shadow-xl px-5 my-2 h-[380px]">
       <CardTitle className="flex items-center gap-2 text-xl md:text-2xl">
         <FileSpreadsheet /> Latest Invoices
       </CardTitle>

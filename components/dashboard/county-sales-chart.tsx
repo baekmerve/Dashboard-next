@@ -27,7 +27,7 @@ export default function CountrySalesChart({ countrySales }: Props) {
   };
 
   return (
-    <Card className="w-full md:col-span-4 rounded-xl shadow-xl my-2 overflow-hidden h-[400px] px-5">
+    <Card className="w-full md:col-span-4 rounded-xl shadow-xl my-2 overflow-hidden h-[350px] px-5">
       <CardTitle className="flex items-center gap-2 text-xl md:text-2xl">
         <FlagIcon /> Sales by Country
       </CardTitle>

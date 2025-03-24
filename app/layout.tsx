@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: "The Dashboard",
   },
   description: "A modern dashboard application powered by Next.js",
-  //metadataBase: new URL("https://"),
+  metadataBase: new URL("https://dashboard-next-red-phi.vercel.app/"),
 };
 
 export default async function RootLayout({

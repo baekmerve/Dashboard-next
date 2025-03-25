@@ -1,13 +1,13 @@
 import { Suspense } from "react";
 import CardListSkeleton from "@/components/skeletons/cardList-skeleton";
 import CardWrapper from "@/components/dashboard/card-wrapper";
-import RevenueChartSkeleton from "@/components/skeletons/revenue-chart-skeleton";
 import LatestInvoices from "@/components/dashboard/latest-invoices";
 import LatestInvoicesSkeleton from "@/components/skeletons/latest-invoices-skeleton";
 
 import RevenueCard from "@/components/dashboard/revenue";
 import RefundCard from "@/components/dashboard/refund";
 import CountryCard from "@/components/dashboard/country";
+import CommonChartSkeleton from "@/components/skeletons/common-chart-skeleton";
 
 export default function Home() {
   return (
@@ -18,8 +18,9 @@ export default function Home() {
           <CardWrapper />
         </Suspense>
       </div>
+
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        <Suspense fallback={<RevenueChartSkeleton />}>
+        <Suspense fallback={<CommonChartSkeleton title="Monthly Revenue" />}>
           <RevenueCard />
         </Suspense>
         <Suspense fallback={<LatestInvoicesSkeleton />}>
@@ -27,10 +28,10 @@ export default function Home() {
         </Suspense>
       </div>
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        <Suspense fallback={<RevenueChartSkeleton />}>
+        <Suspense fallback={<CommonChartSkeleton title="Refund Reasons" />}>
           <RefundCard />
         </Suspense>
-        <Suspense fallback={<RevenueChartSkeleton />}>
+        <Suspense fallback={<CommonChartSkeleton title="Sales by Country" />}>
           <CountryCard />
         </Suspense>
       </div>

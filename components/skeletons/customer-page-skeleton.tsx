@@ -10,10 +10,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function CustomerPageSkeleton() {
   return (
-    <div className="relative flex w-full flex-col overflow-hidden md:col-span-4 bg-gray-50 p-4 border-2 rounded-xl">
+    <div className="relative flex w-full flex-col overflow-hidden md:col-span-4 bg-gray-50 p-4 border-2 rounded-xl mt-10">
       <div className="flex grow flex-col justify-between rounded-xl bg-white p-4 border">
-        <Skeleton className="w-full h-8 rounded-md bg-gray-200 border-2 mb-5" />
-
         {/* mobile */}
         <div className="md:hidden space-y-4">
           {[...Array(6)].map((_, index) => (

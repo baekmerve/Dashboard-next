@@ -10,12 +10,8 @@ import {
 
 export function InvoicesPageSkeleton() {
   return (
-    <div className="relative flex w-full flex-col overflow-hidden md:col-span-4 bg-white p-4 rounded-xl">
+    <div className="relative flex w-full flex-col overflow-hidden md:col-span-4 bg-white p-4 rounded-xl mt-10">
       <div className="flex grow flex-col justify-between rounded-xl bg-gray-50 p-4 border-2">
-        <div className="flex gap-5">
-          <Skeleton className="flex-1 h-8 rounded-md bg-gray-200 border-2 mb-5" />
-          <Skeleton className=" h-8 w-14 md:w-40 rounded-md bg-gray-300 " />
-        </div>
         {/* mobile */}
         <div className="md:hidden space-y-4">
           {[...Array(6)].map((_, index) => (

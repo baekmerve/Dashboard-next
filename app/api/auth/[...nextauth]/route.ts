@@ -11,10 +11,12 @@ const sql = postgres(process.env.POSTGRES_URL!, { ssl: "require" });
 const handler = NextAuth({
   session: {
     strategy: "jwt",
+    maxAge: 30 * 24 * 60 * 60,
   },
   pages: {
     signIn: "/login",
-    signOut: "/register",
+    newUser: "/register",
+    error: "/login",
   },
   providers: [
     CredentialsProvider({
@@ -54,8 +56,6 @@ const handler = NextAuth({
   ],
   callbacks: {
     async redirect({ url, baseUrl }) {
-      console.log("Redirecting to:", url); // Debugging
-      console.log("Base URL:", baseUrl); // Should log NEXTAUTH_URL
 
       return url.startsWith(baseUrl) ? url : baseUrl; // Ensures safe redirect
     },
